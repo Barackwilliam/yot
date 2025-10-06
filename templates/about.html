@@ -1,0 +1,213 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+  .about-hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Overlay ya giza juu ya picha */
+  .about-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55));
+    z-index: 1;
+  }
+
+  .about-hero .content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 20px;
+  }
+
+  .about-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .about-hero p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #f1f1f1;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  }
+
+  .about-btn {
+    margin-top: 25px;
+    background: #f39c12;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+  }
+
+  .about-btn:hover {
+    background: #e67e22;
+  }
+
+  .vision-mission {
+    background: linear-gradient(to right, #f7f7f7, #ffffff);
+    padding: 60px 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .vision-mission h3 {
+    font-weight: 700;
+    color: #1a5f55;
+    margin-bottom: 10px;
+  }
+
+  .vision-mission p {
+    color: #333;
+    line-height: 1.7;
+  }
+
+  .team-section {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom right, #e3e8e5, #ffffff);
+    text-align: center;
+  }
+
+  .team-section h6 {
+    color: #d35400;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .team-section h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: #1a1a1a;
+  }
+
+  .team-item {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .team-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+
+  .team-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+  }
+
+  .team-item .btn {
+    background: #1a5f55;
+    color: #fff;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team-item .btn:hover {
+    background: #d35400;
+  }
+
+  @media (max-width: 768px) {
+    .about-hero h1 {
+      font-size: 1.8rem;
+    }
+    .about-hero p {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+{% if abouts %}
+  {% for i in abouts %}
+  <section class="about-hero" style="background-image: url('{{ i.image }}');">
+    <div class="content">
+      <h1>{{ i.title }}</h1>
+      <p>{{ i.content }}</p>
+      <a href="{% url 'about' %}" class="about-btn" onclick="showLoading(event)">Discover More</a>
+    </div>
+  </section>
+
+  <section class="vision-mission">
+    <div class="container text-center">
+      <div class="row g-5">
+        <div class="col-lg-6">
+          <h3>Our Vision</h3>
+          <p>{{ i.vision }}</p>
+        </div>
+        <div class="col-lg-6">
+          <h3>Our Mission</h3>
+          <p>{{ i.mission }}</p>
+        </div>
+      </div>
+      <p class="text-muted fst-italic mt-4"><small>Last updated: {{ i.last_updated|date:"F d, Y" }}</small></p>
+    </div>
+  </section>
+  {% endfor %}
+{% else %}
+  <div class="alert alert-info text-center py-5">
+    <h4>Information about our organization will be available soon.</h4>
+  </div>
+{% endif %}
+
+<section class="team-section">
+  <div class="container">
+    <h6>Travel Guide</h6>
+    <h1>Meet Our Team</h1>
+    <div class="row g-4">
+      {% for i in teams %}
+      <div class="col-lg-3 col-md-6">
+        <div class="team-item">
+          <img src="{{ i.image }}" alt="{{ i.Full_name }}">
+          <div class="position-relative d-flex justify-content-center" style="margin-top:-20px;">
+            {% if i.facebook_link %}
+              <a class="btn mx-1" href="{{ i.facebook_link }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            {% endif %}
+            {% if i.twitter_link %}
+              <a class="btn mx-1" href="{{ i.twitter_link }}" target="_blank"><i class="fab fa-twitter"></i></a>
+            {% endif %}
+            {% if i.instagram_link %}
+              <a class="btn mx-1" href="{{ i.instagram_link }}" target="_blank"><i class="fab fa-instagram"></i></a>
+            {% endif %}
+          </div>
+          <div class="p-4">
+            <h5 class="mb-0">{{ i.Full_name }}</h5>
+            <small>{{ i.designation }}</small>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}
