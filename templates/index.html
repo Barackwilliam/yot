@@ -1003,6 +1003,7 @@
   }
 </style>
 
+
 <div class="hero-vista">
   {% for item in home_text %}
   <div id="welcomeCarousel{{ forloop.counter }}" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
@@ -1045,13 +1046,16 @@
     Your browser does not support HTML5 video.
   </video>
   {% endfor %}
+
+
+
   <div class="hero-veil"></div>
   <div class="hero-nexus">
     <div class="row w-100 justify-content-center text-center px-3">
       <div class="col-lg-10">
         {% for i in home_text %}
         <h1 class="hero-crest">{{i.title}}</h1>
-        <h5 class="hero-whisper">{{i.subtitle}}</h5>
+        <h5 class="hero-whisper fs-5 mb-4">{{i.subtitle}}</h5>
         {% empty %}
         <h1 class="hero-crest">Welcome to Yote Safari</h1>
         <p class="hero-whisper fs-5 mb-4">Let Us Guide You to the Prime Wonders of Tanzania</p>

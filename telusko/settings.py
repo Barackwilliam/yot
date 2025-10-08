@@ -128,8 +128,11 @@ DATABASES = {
         'PASSWORD': 'Nyumbachap', 
         'HOST': 'aws-1-us-east-2.pooler.supabase.com',  
         'PORT': '5432',  
+        'OPTIONS': {'connect_timeout': 10}
+
     }
 }
+
 
 # user=postgres.xfdsaxdhdavfchbdbohw 
 # password=[YOUR-PASSWORD] 
