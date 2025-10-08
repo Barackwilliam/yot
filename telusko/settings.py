@@ -106,39 +106,28 @@ WSGI_APPLICATION = 'telusko.wsgi.application'
 #     }
 # }
 
-#old database
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres', 
-#         'USER': 'postgres.xmpfxagqwswvbakhwjbg',  
-#         'PASSWORD': 'NyumbaChap', 
-#         'HOST': 'aws-0-eu-central-1.pooler.supabase.com',  
-#         'PORT': '5432',  
-#     }
-# }
 
 
-#new database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres', 
-        'USER': 'postgres.xfdsaxdhdavfchbdbohw',  
-        'PASSWORD': 'Nyumbachap', 
-        'HOST': 'aws-1-us-east-2.pooler.supabase.com',  
+        'USER': 'postgres.mnvgjvcnxnebtiqxozgg',  
+        'PASSWORD': 'NyumbaChap', 
+        'HOST': 'aws-1-eu-west-2.pooler.supabase.com',  
         'PORT': '5432',  
         'OPTIONS': {'connect_timeout': 10}
 
     }
 }
 
-
-# user=postgres.xfdsaxdhdavfchbdbohw 
+# user=postgres.mnvgjvcnxnebtiqxozgg 
 # password=[YOUR-PASSWORD] 
-# host=aws-1-us-east-2.pooler.supabase.com
+# host=aws-1-eu-west-2.pooler.supabase.com
 # port=5432
 # dbname=postgres
+
+# NyumbaChap
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
