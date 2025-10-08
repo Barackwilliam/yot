@@ -4,27 +4,34 @@
 {% block content %}
 
 <style>
-  /* Ultra-Premium Global Design Overhaul - African Safari Elegance */
+  /* Enhanced Modern Luxe Safari Design - Vibrant African Elegance */
   :root {
-    --safari-gold: #D4AF37;
-    --deep-savanna: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
-    --fiery-sunset: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 50%, #FFBB4D 100%);
-    --midnight-jungle: linear-gradient(135deg, #0C0E0F 0%, #1A1C1E 50%, #2D2F33 100%);
-    --luxury-glow: rgba(212, 175, 55, 0.6);
-    --shadow-epic: 0 25px 80px rgba(0, 0, 0, 0.4);
-    --border-luxe: 1px solid rgba(212, 175, 55, 0.3);
-    --text-elegant: #F8F9FA;
+    --safari-amber: #F4A261;
+    --deep-veld: linear-gradient(135deg, #0A1A2F 0%, #1E3A5F 50%, #2A4D7A 100%);
+    --sunset-blaze: linear-gradient(135deg, #E76F51 0%, #F4A261 50%, #F9C74F 100%);
+    --night-savanna: linear-gradient(135deg, #08090A 0%, #15171A 50%, #25272B 100%);
+    --golden-glow: rgba(244, 162, 97, 0.6);
+    --shadow-luxe: 0 15px 50px rgba(0, 0, 0, 0.35);
+    --border-gleam: 1px solid rgba(244, 162, 97, 0.3);
+    --text-luminous: #F9FAFB;
+    --transition-ease: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
-  * { box-sizing: border-box; }
+  * { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+  }
   body { 
-    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif; 
-    line-height: 1.7; 
-    color: var(--text-elegant); 
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; 
+    line-height: 1.6; 
+    color: var(--text-luminous); 
     overflow-x: hidden;
+    background: var(--deep-veld);
+    scroll-behavior: smooth;
   }
 
-  /* Hero: Cinematic Full-Screen Carousel */
+  /* Enhanced Hero: Cinematic Full-Screen Experience */
   .hero-vista { 
     position: relative; 
     height: 100vh; 
@@ -32,145 +39,165 @@
     display: flex; 
     align-items: center; 
     justify-content: center; 
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
   }
-  .hero-vista .carousel { height: 100vh; }
+  .hero-vista .carousel { 
+    height: 100vh; 
+  }
   .hero-vista .carousel-inner img, .hero-vista video { 
     width: 100%; 
     height: 100vh; 
     object-fit: cover; 
-    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    transition: transform 1.2s var(--transition-ease); 
+    filter: brightness(0.9);
   }
-  .hero-vista .carousel-item:hover img { transform: scale(1.05); }
+  .hero-vista .carousel-item:hover img { 
+    transform: scale(1.15) rotate(0.5deg); 
+  }
   .hero-veil { 
     position: absolute; 
     top: 0; left: 0; 
     width: 100%; height: 100%; 
-    background: radial-gradient(circle at center, rgba(15, 32, 39, 0.3) 0%, rgba(32, 58, 67, 0.7) 70%, rgba(44, 83, 100, 0.9) 100%); 
+    background: radial-gradient(circle at center, rgba(10, 26, 47, 0.3) 0%, rgba(30, 58, 95, 0.7) 70%, rgba(42, 77, 122, 0.9) 100%); 
     z-index: 1; 
   }
   .hero-nexus { 
     position: relative; 
     z-index: 2; 
     text-align: center; 
-    padding: 0 2rem; 
-    animation: heroRise 1.2s ease-out; 
+    padding: 0 1rem; 
+    animation: heroFade 1.8s ease-out; 
   }
-  @keyframes heroRise { 
+  @keyframes heroFade { 
     from { opacity: 0; transform: translateY(40px); } 
     to { opacity: 1; transform: translateY(0); } 
   }
   .hero-crest { 
-    font-family: 'Merienda', cursive; 
-    font-size: clamp(2.5rem, 5vw, 4.5rem); 
+    font-family: 'Playfair Display', serif; 
+    font-size: clamp(3.5rem, 8vw, 6rem); 
     font-weight: 900; 
-    background: var(--fiery-sunset); 
+    background: var(--sunset-blaze); 
     -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent; 
-    background-clip: text; 
-    margin-bottom: 1rem; 
-    letter-spacing: 0.05em; 
-    text-shadow: 0 0 30px var(--luxury-glow); 
+    margin-bottom: 1.5rem; 
+    letter-spacing: 0.1em; 
+    text-shadow: 0 0 25px var(--golden-glow); 
+    animation: pulseGlow 3s infinite ease-in-out;
+  }
+  @keyframes pulseGlow {
+    0%, 100% { text-shadow: 0 0 25px var(--golden-glow); }
+    50% { text-shadow: 0 0 35px var(--golden-glow); }
   }
   .hero-whisper { 
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem); 
+    font-size: clamp(1.3rem, 3vw, 2rem); 
     opacity: 0.95; 
-    margin-bottom: 2.5rem; 
+    margin-bottom: 3rem; 
     font-weight: 300; 
     text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
   }
   .quest-oracle { 
-    max-width: 700px; 
+    max-width: 800px; 
     margin: 0 auto 3rem; 
     position: relative; 
-    animation: oracleFade 1.8s ease-out 0.3s both; 
+    animation: oracleSlide 1.8s ease-out 0.3s both; 
   }
-  @keyframes oracleFade { 
+  @keyframes oracleSlide { 
     from { opacity: 0; transform: translateY(30px); } 
     to { opacity: 1; transform: translateY(0); } 
   }
   .quest-oracle .form-control { 
     border: none; 
     border-radius: 50px; 
-    padding: 1.2rem 1.8rem; 
-    font-size: 1.1rem; 
-    background: rgba(248, 249, 250, 0.95); 
-    box-shadow: var(--shadow-epic); 
-    transition: box-shadow 0.3s ease; 
+    padding: 1.3rem 2.5rem; 
+    font-size: 1.15rem; 
+    background: rgba(249, 250, 251, 0.98); 
+    box-shadow: var(--shadow-luxe); 
+    transition: all 0.4s var(--transition-ease); 
   }
   .quest-oracle .form-control:focus { 
-    box-shadow: 0 0 0 0.2rem var(--luxury-glow), var(--shadow-epic); 
+    box-shadow: 0 0 0 0.3rem var(--golden-glow), var(--shadow-luxe); 
+    transform: scale(1.02); 
   }
   .oracle-summon { 
     position: absolute; 
-    right: 0.5rem; 
+    right: 0.7rem; 
     top: 50%; 
     transform: translateY(-50%); 
-    background: var(--fiery-sunset); 
+    background: var(--sunset-blaze); 
     border: none; 
     border-radius: 50px; 
-    padding: 1rem 2rem; 
-    color: var(--text-elegant); 
+    padding: 1.1rem 2.5rem; 
+    color: var(--text-luminous); 
     font-weight: 700; 
     cursor: pointer; 
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-    box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4); 
+    transition: all 0.5s var(--transition-ease); 
+    box-shadow: 0 6px 20px rgba(231, 111, 81, 0.6); 
   }
   .oracle-summon:hover { 
-    transform: translateY(-50%) scale(1.05); 
-    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.6); 
+    transform: translateY(-50%) scale(1.08); 
+    box-shadow: 0 10px 30px rgba(231, 111, 81, 0.8); 
+    filter: brightness(1.1);
   }
 
-  /* Modal: Ethereal Portal */
+  /* Modal: Ethereal Gateway */
   .modal-ethereal .modal-content { 
     border: none; 
     border-radius: 25px; 
-    box-shadow: var(--shadow-epic); 
-    background: linear-gradient(135deg, rgba(248, 249, 250, 0.98) 0%, rgba(255, 255, 255, 1) 100%); 
+    box-shadow: var(--shadow-luxe); 
+    background: linear-gradient(135deg, rgba(249, 250, 251, 0.97) 0%, rgba(255, 255, 255, 1) 100%); 
+    animation: modalPop 0.5s ease-out; 
+  }
+  @keyframes modalPop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
   }
   .modal-ethereal .modal-header { 
-    background: var(--deep-savanna); 
-    color: var(--text-elegant); 
+    background: var(--deep-veld); 
+    color: var(--text-luminous); 
     border-radius: 25px 25px 0 0; 
-    border-bottom: var(--border-luxe); 
+    border-bottom: var(--border-gleam); 
   }
   .modal-ethereal .modal-title { 
-    font-family: 'Merienda', cursive; 
-    font-weight: 800; 
+    font-family: 'Playfair Display', serif; 
+    font-weight: 700; 
+    font-size: 1.8rem; 
   }
   .modal-ethereal .modal-body { 
     padding: 3rem; 
   }
   .modal-ethereal .btn-gradient { 
-    background: var(--fiery-sunset); 
+    background: var(--sunset-blaze); 
     border-radius: 50px; 
-    font-weight: 600; 
-    padding: 1rem 2.5rem; 
-    transition: all 0.3s ease; 
-    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4); 
+    font-weight: 700; 
+    padding: 1.2rem 3rem; 
+    transition: all 0.4s var(--transition-ease); 
+    box-shadow: 0 5px 20px rgba(231, 111, 81, 0.5); 
   }
   .modal-ethereal .btn-gradient:hover { 
-    transform: translateY(-2px); 
-    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6); 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 25px rgba(231, 111, 81, 0.7); 
+    filter: brightness(1.1);
   }
 
-  /* Headline: Majestic Proclamation */
+  /* Headline: Grand Declaration */
   .proclamation-spire { 
-    background: linear-gradient(135deg, rgba(248, 249, 250, 0.98) 0%, #FFF 100%); 
-    padding: 4rem 0; 
-    box-shadow: var(--shadow-epic); 
+    background: linear-gradient(135deg, rgba(249, 250, 251, 0.97) 0%, #FFF 100%); 
+    padding: 5rem 0; 
+    box-shadow: var(--shadow-luxe); 
     margin: 3rem 0; 
   }
   .proclamation-spire .container { text-align: center; }
   .proclamation-spire h1 { 
-    font-family: 'Merienda', cursive; 
-    font-size: clamp(2.5rem, 6vw, 4rem); 
-    background: var(--deep-savanna); 
+    font-family: 'Playfair Display', serif; 
+    font-size: clamp(3rem, 6vw, 4.5rem); 
+    background: var(--sunset-blaze); 
     -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent; 
-    background-clip: text; 
     letter-spacing: 0.1em; 
-    margin-bottom: 1rem; 
+    margin-bottom: 1.5rem; 
     position: relative; 
+    text-shadow: 0 0 20px var(--golden-glow); 
+    animation: pulseGlow 3s infinite ease-in-out;
   }
   .proclamation-spire h1::after { 
     content: ''; 
@@ -178,21 +205,21 @@
     bottom: -1rem; 
     left: 50%; 
     transform: translateX(-50%); 
-    width: 80px; 
-    height: 4px; 
-    background: var(--fiery-sunset); 
-    border-radius: 2px; 
-    box-shadow: 0 2px 10px var(--luxury-glow); 
+    width: 100px; 
+    height: 5px; 
+    background: var(--sunset-blaze); 
+    border-radius: 3px; 
+    box-shadow: 0 3px 10px var(--golden-glow); 
   }
   .proclamation-spire .half-height { 
-    padding: 2rem; 
-    background: rgba(255, 255, 255, 0.8); 
+    padding: 2.5rem; 
+    background: rgba(255, 255, 255, 0.95); 
     border-radius: 20px; 
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15); 
   }
   .stylish-heading { 
-    letter-spacing: 0.05em; 
-    padding-bottom: 1rem; 
+    letter-spacing: 0.08em; 
+    padding-bottom: 1.2rem; 
     position: relative; 
   }
   .stylish-heading::after { 
@@ -201,345 +228,340 @@
     bottom: 0; 
     left: 50%; 
     transform: translateX(-50%); 
-    width: 60px; 
-    height: 3px; 
-    background: var(--fiery-sunset); 
-    border-radius: 2px; 
-  }
-
-  /* About: Epic Narrative */
-  .narrative-saga { 
-    background: var(--deep-savanna); 
-    padding: 8rem 0; 
-    position: relative; 
-    overflow: hidden; 
-  }
-  .narrative-saga::before { 
-    content: ''; 
-    position: absolute; 
-    top: 0; left: 0; 
-    width: 100%; height: 100%; 
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); 
-    z-index: 0; 
-  }
-  .narrative-saga .container { position: relative; z-index: 1; }
-  .narrative-saga .row { align-items: center; }
-  .narrative-saga .about-image-wrapper { 
-    position: relative; 
-    border-radius: 25px; 
-    overflow: hidden; 
-    box-shadow: var(--shadow-epic); 
-    border: var(--border-luxe); 
-    min-height: 450px; 
-  }
-  .narrative-saga .about-image-wrapper img { 
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-  }
-  .narrative-saga .about-image-wrapper:hover img { 
-    transform: scale(1.15); 
-  }
-  .narrative-saga .about-box { 
-    background: rgba(255, 255, 255, 0.95); 
-    border-radius: 25px; 
-    padding: 4rem; 
-    box-shadow: var(--shadow-epic); 
-    border: var(--border-luxe); 
-    backdrop-filter: blur(10px); 
-  }
-  .narrative-saga .about-label { 
-    color: var(--safari-gold); 
-    font-family: 'Merienda', cursive; 
-    font-size: 2rem; 
-    font-weight: 900; 
-    text-transform: uppercase; 
-    letter-spacing: 0.1em; 
-    position: relative; 
-    margin-bottom: 2rem; 
-  }
-  .narrative-saga .about-label .decor .line { 
-    background: var(--safari-gold); 
+    width: 80px; 
+    height: 4px; 
+    background: var(--sunset-blaze); 
     border-radius: 3px; 
-    animation: sagaPulse 2s ease-in-out infinite alternate; 
-  }
-  @keyframes sagaPulse { 
-    0% { opacity: 0.7; transform: scaleX(1); } 
-    100% { opacity: 1; transform: scaleX(1.2); } 
-  }
-  .narrative-saga .about-box h1 { 
-    color: #1a1a2e; 
-    font-family: 'Merienda', cursive; 
-    font-size: 2.5rem; 
-    margin-bottom: 1.5rem; 
-  }
-  .narrative-saga .about-box p { 
-    color: #333; 
-    font-size: 1.1rem; 
-    margin-bottom: 2rem; 
-  }
-  .narrative-saga .btn { 
-    background: var(--fiery-sunset); 
-    border: none; 
-    color: #fff; 
-    font-weight: 700; 
-    padding: 1rem 2.5rem; 
-    border-radius: 50px; 
-    transition: all 0.4s ease; 
-    box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4); 
-  }
-  .narrative-saga .btn:hover { 
-    transform: translateY(-3px); 
-    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.6); 
   }
 
-  /* Services: Opulent Gallery */
+  /* About: Epic Tale */
+  .about-full-section { 
+    min-height: 85vh; 
+    padding: 6rem 1rem; 
+    background: linear-gradient(135deg, #F9FAFB 0%, #E9ECEF 100%); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    font-family: 'Playfair Display', serif; 
+    position: relative; 
+    overflow: hidden; 
+  }
+  .section-label { 
+    font-size: 1rem; 
+    letter-spacing: 3px; 
+    font-weight: 700; 
+    color: var(--safari-amber); 
+    text-transform: uppercase; 
+  }
+  .decor-line { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+  }
+  .decor-line .line { 
+    display: block; 
+    height: 3px; 
+    background: var(--safari-amber); 
+    border-radius: 50px; 
+    transition: width 0.3s ease; 
+  }
+  .decor-line .line.short { width: 30px; }
+  .decor-line .line.long { width: 60px; }
+  .about-title { 
+    font-size: clamp(2.5rem, 5vw, 3.5rem); 
+    font-weight: 800; 
+    color: #2D2D2D; 
+    margin-bottom: 1.5rem; 
+    animation: fadeInUp 1s ease-out; 
+  }
+  .about-text { 
+    max-width: 900px; 
+    color: #444; 
+    line-height: 2; 
+    font-size: clamp(1rem, 2vw, 1.2rem); 
+    animation: fadeInUp 1.2s ease-out 0.2s both; 
+  }
+  .btn-about { 
+    background: var(--sunset-blaze); 
+    color: #000; 
+    font-weight: 700; 
+    border: none; 
+    border-radius: 50px; 
+    padding: 1rem 2.5rem; 
+    transition: all 0.4s var(--transition-ease); 
+    box-shadow: 0 5px 15px rgba(231, 111, 81, 0.5); 
+  }
+  .btn-about:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 25px rgba(231, 111, 81, 0.7); 
+    color: #000; 
+    filter: brightness(1.1);
+  }
+
+  /* Services: Opulent Showcase */
   .opulent-gallery { 
-    background: rgba(255, 255, 255, 0.98); 
+    background: var(--night-savanna); 
     padding: 8rem 0; 
   }
   .opulent-gallery .section-title { 
-    background: var(--midnight-jungle); 
-    color: var(--safari-gold); 
-    padding: 1rem 2rem; 
+    background: var(--safari-amber); 
+    color: #000; 
+    padding: 1rem 2.5rem; 
     border-radius: 50px; 
     font-weight: 700; 
-    letter-spacing: 0.1em; 
+    letter-spacing: 0.12em; 
+    display: inline-block; 
+    margin-bottom: 1rem; 
   }
   .opulent-gallery h1 { 
-    font-family: 'Merienda', cursive; 
-    font-size: clamp(2.5rem, 5vw, 3.5rem); 
-    color: #1a1a2e; 
-    margin-bottom: 1rem; 
+    font-family: 'Playfair Display', serif; 
+    font-size: clamp(3rem, 5.5vw, 4rem); 
+    color: var(--text-luminous); 
+    margin-bottom: 1.5rem; 
   }
   .opulent-gallery .service-card { 
     border-radius: 25px; 
     overflow: hidden; 
-    box-shadow: var(--shadow-epic); 
-    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-    border: var(--border-luxe); 
+    box-shadow: var(--shadow-luxe); 
+    transition: all 0.6s var(--transition-ease); 
+    border: var(--border-gleam); 
     position: relative; 
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(10px); 
   }
-  .opulent-gallery .service-card::before { 
-    content: ''; 
-    position: absolute; 
-    top: 0; left: 0; 
-    width: 100%; height: 100%; 
-    background: var(--luxury-glow); 
-    opacity: 0; 
-    transition: opacity 0.3s ease; 
-    z-index: -1; 
-  }
-  .opulent-gallery .service-card:hover::before { opacity: 1; }
   .opulent-gallery .service-card:hover { 
-    transform: translateY(-15px) rotateX(5deg); 
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5); 
+    transform: translateY(-12px) rotateX(4deg); 
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5); 
   }
   .opulent-gallery .luxury-img-container { 
     height: 280px; 
     overflow: hidden; 
+    position: relative; 
   }
   .opulent-gallery .luxury-img { 
-    transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 1s var(--transition-ease); 
   }
   .opulent-gallery .service-card:hover .luxury-img { 
     transform: scale(1.2) rotate(3deg); 
   }
   .opulent-gallery .card-body { 
-    background: var(--midnight-jungle); 
-    color: var(--text-elegant); 
+    background: var(--night-savanna); 
+    color: var(--text-luminous); 
     padding: 2.5rem; 
-    border-top: var(--border-luxe); 
+    border-top: var(--border-gleam); 
   }
   .opulent-gallery .service-title { 
-    color: var(--safari-gold); 
-    font-family: 'Merienda', cursive; 
-    font-size: 1.5rem; 
+    color: var(--safari-amber); 
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.8rem; 
+    margin-bottom: 1rem; 
   }
   .opulent-gallery .btn-gold { 
-    background: var(--fiery-sunset); 
+    background: var(--sunset-blaze); 
     border-radius: 50px; 
     font-weight: 700; 
-    transition: all 0.4s ease; 
+    padding: 0.8rem 2rem; 
+    transition: all 0.4s var(--transition-ease); 
   }
   .opulent-gallery .btn-gold:hover { 
     transform: scale(1.1); 
-    box-shadow: 0 0 30px var(--luxury-glow); 
+    box-shadow: 0 0 30px var(--golden-glow); 
+    filter: brightness(1.1); 
   }
   .opulent-gallery .view-more { 
-    background: var(--midnight-jungle); 
-    color: var(--safari-gold); 
-    border: var(--border-luxe); 
+    background: var(--night-savanna); 
+    color: var(--safari-amber); 
+    border: var(--border-gleam); 
     font-weight: 700; 
     padding: 1rem 3rem; 
     border-radius: 50px; 
-    transition: all 0.4s ease; 
+    transition: all 0.4s var(--transition-ease); 
   }
   .opulent-gallery .view-more:hover { 
-    background: var(--safari-gold); 
+    background: var(--safari-amber); 
     color: #000; 
     transform: scale(1.05); 
+    box-shadow: 0 5px 15px rgba(231, 111, 81, 0.5); 
   }
 
   /* Why Travel: Sacred Pillars */
   .sacred-pillars { 
-    background: var(--deep-savanna); 
+    background: var(--deep-veld); 
     padding: 8rem 0; 
   }
   .sacred-pillars h2 { 
-    font-family: 'Merienda', cursive; 
-    font-size: clamp(2.5rem, 5vw, 3.5rem); 
-    color: var(--text-elegant); 
-    margin-bottom: 1rem; 
+    font-family: 'Playfair Display', serif; 
+    font-size: clamp(3rem, 5.5vw, 4rem); 
+    color: var(--text-luminous); 
+    margin-bottom: 1.5rem; 
+    text-align: center; 
   }
   .sacred-pillars p { 
     font-size: 1.3rem; 
-    color: rgba(248, 249, 250, 0.9); 
+    color: rgba(249, 250, 251, 0.9); 
     margin-bottom: 3rem; 
+    text-align: center; 
   }
   .sacred-pillars .pillar { 
-    background: rgba(255, 255, 255, 0.05); 
+    background: rgba(255, 255, 255, 0.1); 
     backdrop-filter: blur(15px); 
     border-radius: 25px; 
     padding: 3.5rem 2rem; 
     text-align: center; 
-    box-shadow: var(--shadow-epic); 
-    border: var(--border-luxe); 
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    box-shadow: var(--shadow-luxe); 
+    border: var(--border-gleam); 
+    transition: all 0.5s var(--transition-ease); 
     position: relative; 
     overflow: hidden; 
   }
-  .sacred-pillars .pillar::before { 
-    content: ''; 
-    position: absolute; 
-    top: -50%; left: -50%; 
-    width: 200%; height: 200%; 
-    background: var(--fiery-sunset); 
-    opacity: 0; 
-    transition: opacity 0.5s ease; 
-    z-index: -1; 
-    transform: rotate(45deg); 
-  }
-  .sacred-pillars .pillar:hover::before { opacity: 0.1; }
   .sacred-pillars .pillar:hover { 
     transform: translateY(-10px) rotateZ(2deg); 
-    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5); 
   }
   .sacred-pillars .pillar i { 
     font-size: 4rem; 
-    color: var(--safari-gold); 
+    color: var(--safari-amber); 
     margin-bottom: 1.5rem; 
-    transition: transform 0.3s ease; 
+    transition: transform 0.4s var(--transition-ease); 
   }
   .sacred-pillars .pillar:hover i { 
     transform: scale(1.2) rotate(10deg); 
   }
   .sacred-pillars .pillar h5 { 
-    color: var(--text-elegant); 
-    font-family: 'Merienda', cursive; 
-    font-size: 1.5rem; 
+    color: var(--text-luminous); 
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.8rem; 
     margin-bottom: 1rem; 
   }
   .sacred-pillars .pillar p { 
-    color: rgba(248, 249, 250, 0.9); 
-    font-size: 1rem; 
+    color: rgba(249, 250, 251, 0.95); 
+    font-size: 1.1rem; 
   }
 
-  /* Intro Narrative: Vast Horizon */
-  .vast-horizon { 
-    padding: 8rem 0; 
-    background: rgba(255, 255, 255, 0.98); 
-  }
-  .vast-horizon h1 { 
-    font-family: 'Times New Roman', serif; 
-    font-size: clamp(2rem, 4vw, 3rem); 
-    color: #b21f1f; 
-    text-align: center; 
-    margin-bottom: 2rem; 
-    font-weight: bold; 
-  }
-  .vast-horizon p { 
-    font-size: 1.1rem; 
-    text-align: center; 
-    max-width: 900px; 
-    margin: 0 auto 3rem; 
-    color: #666; 
-    line-height: 1.8; 
-  }
-  .vast-horizon .carousel { 
-    max-width: 1000px; 
-    margin: 0 auto; 
-    border-radius: 25px; 
+  /* Kilimanjaro Section: Majestic Ascent */
+  .kilimanjaro-section { 
+    background: linear-gradient(135deg, #1A2A6C 0%, #B21F1F 50%, #F4A261 100%); 
+    color: #F9FAFB; 
+    position: relative; 
     overflow: hidden; 
-    box-shadow: var(--shadow-epic); 
+    padding: 8rem 0; 
   }
-  .vast-horizon .carousel-item img { 
-    height: 500px; 
-    object-fit: cover; 
-  }
-  .vast-horizon .carousel-caption-top { 
+  .bg-icons i { 
     position: absolute; 
-    top: 20px; 
+    font-size: 5rem; 
+    opacity: 0.08; 
+    color: var(--safari-amber); 
+    animation: floatIcon 10s infinite ease-in-out; 
+  }
+  .icon-1 { top: 10%; left: 5%; }
+  .icon-2 { top: 50%; right: 10%; font-size: 6rem; }
+  .icon-3 { bottom: 15%; left: 15%; }
+  .icon-4 { top: 20%; right: 15%; font-size: 4.5rem; }
+  @keyframes floatIcon { 
+    0%, 100% { transform: translateY(0); } 
+    50% { transform: translateY(-20px); } 
+  }
+  .kilimanjaro-section h1 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: clamp(3rem, 5.5vw, 4rem); 
+    color: #FFF; 
+    margin-bottom: 1.5rem; 
+    text-align: center; 
+  }
+  .kilimanjaro-section .carousel-image-wrapper { 
+    position: relative; 
+    height: 500px; 
+    border-radius: 20px; 
+    overflow: hidden; 
+  }
+  .kilimanjaro-section .carousel-image-wrapper img { 
+    object-fit: cover; 
+    height: 100%; 
+    width: 100%; 
+    transition: transform 1s var(--transition-ease); 
+  }
+  .kilimanjaro-section .carousel-image-wrapper:hover img { 
+    transform: scale(1.15); 
+  }
+  .kilimanjaro-section .carousel-overlay { 
+    position: absolute; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%); 
+  }
+  .kilimanjaro-section .carousel-caption-top { 
+    position: absolute; 
+    top: 40px; 
     left: 50%; 
     transform: translateX(-50%); 
     text-align: center; 
-    width: 90%; 
-    background: linear-gradient(90deg, rgba(0,0,0,0.8), rgba(0,0,0,0.4)); 
-    padding: 1rem 1.5rem; 
-    border-radius: 15px; 
-    backdrop-filter: blur(10px); 
+    animation: fadeDown 1.5s ease forwards; 
   }
-  .vast-horizon .carousel-caption-top h3 { 
-    color: #ff9800; 
-    font-size: 1.5rem; 
-    font-weight: 600; 
-    text-shadow: 0 2px 8px rgba(0,0,0,0.8); 
+  .kilimanjaro-section .carousel-caption-top h3 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: clamp(1.8rem, 3vw, 2rem); 
+    background: var(--sunset-blaze); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    font-weight: 700; 
+    text-shadow: 0 0 15px rgba(0,0,0,0.4); 
   }
-  @media (max-width: 768px) { 
-    .vast-horizon .carousel-item img { height: 300px; } 
-    .vast-horizon .carousel-caption-top h3 { font-size: 1.2rem; } 
+  @keyframes fadeDown { 
+    from { opacity: 0; transform: translate(-50%, -20px); } 
+    to { opacity: 1; transform: translate(-50%, 0); } 
   }
 
-  /* Time & Packing: Timeless Scrolls */
+  /* Time & Packing: Timeless Chronicles */
   .timeless-scrolls, .packing-scrolls { 
     padding: 8rem 0; 
-    background: var(--deep-savanna); 
+    background: var(--deep-veld); 
   }
   .timeless-scrolls h2, .packing-scrolls h2 { 
-    font-family: 'Merienda', cursive; 
-    font-size: clamp(2rem, 4vw, 2.5rem); 
-    color: var(--safari-gold); 
+    font-family: 'Playfair Display', serif; 
+    font-size: clamp(2.5rem, 4.5vw, 3rem); 
+    color: var(--safari-amber); 
     text-align: center; 
     margin-bottom: 2rem; 
   }
   .timeless-scrolls p, .packing-scrolls p { 
-    font-size: 1.1rem; 
+    font-size: 1.2rem; 
     text-align: center; 
-    max-width: 700px; 
+    max-width: 800px; 
     margin: 0 auto 3rem; 
-    color: var(--text-elegant); 
+    color: var(--text-luminous); 
   }
   .scroll-container { 
     display: grid; 
     grid-template-columns: 1fr 1fr; 
     gap: 3rem; 
-    align-items: start; 
+    align-items: stretch; 
   }
   .scroll-vault { 
-    background: rgba(255, 255, 255, 0.05); 
+    background: rgba(255, 255, 255, 0.08); 
     backdrop-filter: blur(15px); 
     border-radius: 20px; 
     padding: 3rem; 
-    box-shadow: var(--shadow-epic); 
-    border: var(--border-luxe); 
-    height: 100%; 
+    box-shadow: var(--shadow-luxe); 
+    border: var(--border-gleam); 
+    transition: all 0.4s var(--transition-ease); 
+  }
+  .scroll-vault:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); 
   }
   .scroll-vault h2 { 
-    color: var(--safari-gold); 
+    color: var(--safari-amber); 
     margin-bottom: 1.5rem; 
     font-size: 2rem; 
   }
   .scroll-vault p { 
-    color: var(--text-elegant); 
-    font-size: 1.1rem; 
+    color: var(--text-luminous); 
+    font-size: 1.2rem; 
     margin-bottom: 2rem; 
   }
   .recommended-scroll ul { 
@@ -548,17 +570,18 @@
   }
   .recommended-scroll li { 
     padding: 1.2rem; 
-    background: rgba(0, 255, 0, 0.1); 
+    background: rgba(0, 255, 0, 0.15); 
     margin-bottom: 1rem; 
     border-radius: 15px; 
-    border-left: 5px solid #00ff00; 
-    transition: transform 0.3s ease; 
+    border-left: 5px solid #00cc00; 
+    transition: transform 0.4s var(--transition-ease); 
   }
   .recommended-scroll li:hover { 
     transform: translateX(10px); 
+    background: rgba(0, 255, 0, 0.2); 
   }
   .avoid-scroll { 
-    background: rgba(255, 0, 0, 0.1); 
+    background: rgba(255, 0, 0, 0.15); 
     border-radius: 15px; 
     padding: 2rem; 
     border-left: 5px solid #ff0000; 
@@ -568,27 +591,28 @@
     font-weight: 700; 
   }
   .avoid-scroll p { 
-    color: var(--text-elegant); 
+    color: var(--text-luminous); 
   }
   .packing-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 2rem; 
+    gap: 2.5rem; 
   }
   .packing-vault { 
-    background: rgba(255, 255, 255, 0.95); 
+    background: rgba(255, 255, 255, 0.98); 
     border-radius: 20px; 
     padding: 2.5rem; 
-    box-shadow: var(--shadow-epic); 
-    border: var(--border-luxe); 
-    transition: transform 0.3s ease; 
+    box-shadow: var(--shadow-luxe); 
+    border: var(--border-gleam); 
+    transition: transform 0.4s var(--transition-ease); 
     text-align: center; 
   }
   .packing-vault:hover { 
-    transform: translateY(-5px); 
+    transform: translateY(-6px); 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); 
   }
   .packing-vault h5 { 
-    color: var(--deep-savanna); 
+    color: #2D2D2D; 
     font-weight: 700; 
     margin-bottom: 1.5rem; 
   }
@@ -600,412 +624,357 @@
   .packing-vault li { 
     padding: 0.8rem 0; 
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
-    color: #666; 
+    color: #555; 
   }
   .packing-icon { 
     font-size: 3rem; 
     margin-bottom: 1rem; 
-  }
-  @media (max-width: 768px) { 
-    .scroll-container { grid-template-columns: 1fr; } 
+    color: var(--safari-amber); 
   }
 
-  /* Destinations: Celestial Constellation */
-  .celestial-constellation { 
-    background: rgba(255, 255, 255, 0.98); 
+  /* Destinations: Celestial Ventures */
+  .exclusive-destinations { 
+    background: linear-gradient(135deg, #FFF 0%, #F8F5F0 35%, #F1E6D1 100%); 
     padding: 8rem 0; 
-  }
-  .celestial-constellation .section-title { 
-    background: var(--midnight-jungle); 
-    color: var(--safari-gold); 
-  }
-  .celestial-constellation h1 { 
-    font-family: 'Merienda', cursive; 
-    color: #1a1a2e; 
-  }
-  .celestial-constellation .luxury-card { 
-    border-radius: 25px; 
+    position: relative; 
     overflow: hidden; 
-    box-shadow: var(--shadow-epic); 
-    transition: all 0.6s ease; 
-    border: var(--border-luxe); 
+  }
+  .exclusive-destinations::before { 
+    content: ""; 
+    position: absolute; 
+    top: -50px; 
+    left: -50px; 
+    width: 200px; 
+    height: 200px; 
+    background: radial-gradient(circle, var(--safari-amber) 0%, transparent 70%); 
+    opacity: 0.3; 
+    filter: blur(40px); 
+  }
+  .exclusive-destinations::after { 
+    content: ""; 
+    position: absolute; 
+    bottom: -50px; 
+    right: -50px; 
+    width: 250px; 
+    height: 250px; 
+    background: radial-gradient(circle, #F9C74F 0%, transparent 70%); 
+    opacity: 0.3; 
+    filter: blur(40px); 
+  }
+  .section-header .luxury-label { 
+    background: rgba(255, 255, 255, 0.7); 
+    border: 1px solid #E5D5A3; 
+    border-radius: 30px; 
+    font-weight: 700; 
+    color: var(--safari-amber); 
+    backdrop-filter: blur(10px); 
+    padding: 0.8rem 2rem; 
+  }
+  .section-header .title { 
+    font-family: 'Playfair Display', serif; 
+    color: #2D2D2D; 
+    font-size: clamp(3rem, 5.5vw, 4rem); 
+  }
+  .section-header .highlight { 
+    background: var(--sunset-blaze); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+  }
+  .luxury-divider { 
+    width: 150px; 
+    height: 4px; 
+    background: linear-gradient(90deg, transparent 0%, var(--safari-amber) 50%, transparent 100%); 
+    border-radius: 50px; 
+    margin: 1rem auto; 
+  }
+  .destination-card { 
+    background: #FFF; 
+    border-radius: 20px; 
+    overflow: hidden; 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
+    transition: all 0.5s var(--transition-ease); 
     position: relative; 
   }
-  .celestial-constellation .luxury-card:hover { 
-    transform: translateY(-15px) rotateY(5deg); 
+  .destination-card:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); 
   }
-  .celestial-constellation .luxury-img-container { 
-    height: 350px; 
+  .card-image { 
+    position: relative; 
+    height: 220px; 
+    overflow: hidden; 
   }
-  .celestial-constellation .badge { 
-    background: var(--fiery-sunset); 
-    border-radius: 25px; 
-    padding: 0.75rem 1.5rem; 
+  .card-image img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.6s var(--transition-ease); 
+  }
+  .destination-card:hover .card-image img { 
+    transform: scale(1.15); 
+  }
+  .badge { 
+    position: absolute; 
+    top: 15px; 
+    font-size: 0.9rem; 
     font-weight: 700; 
-    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4); 
+    border-radius: 30px; 
+    backdrop-filter: blur(8px); 
   }
-  .celestial-constellation .card-body { 
-    background: var(--midnight-jungle); 
-    color: var(--text-elegant); 
-    padding: 2rem; 
+  .badge.offer { 
+    left: 15px; 
+    background: rgba(0,0,0,0.7); 
+    color: var(--safari-amber); 
+    padding: 5px 12px; 
   }
-  .celestial-constellation .luxury-overlay { 
-    background: var(--overlay-dark); 
+  .badge.exclusive { 
+    right: 15px; 
+    background: rgba(244, 162, 97, 0.25); 
+    color: #2D2D2D; 
+    padding: 5px 12px; 
   }
-  .celestial-constellation .view-more { 
-    background: var(--midnight-jungle); 
-    color: var(--safari-gold); 
-    border: var(--border-luxe); 
+  .card-content { 
+    padding: 1.5rem; 
+    text-align: left; 
+  }
+  .card-content h5 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.4rem; 
+    font-weight: 700; 
+    margin-bottom: 0.5rem; 
+  }
+  .card-content p { 
+    color: #666; 
+    font-size: 1rem; 
+    margin-bottom: 1rem; 
+  }
+  .btn-luxury { 
+    background: var(--sunset-blaze); 
+    color: #000; 
+    font-weight: 700; 
+    border: none; 
+    border-radius: 30px; 
+    padding: 0.8rem 2rem; 
+    transition: all 0.4s var(--transition-ease); 
+  }
+  .btn-luxury:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px rgba(231, 111, 81, 0.5); 
+    color: #000; 
+    filter: brightness(1.1); 
+  }
+  .explore-link { 
+    display: inline-block; 
+    font-weight: 700; 
+    color: var(--safari-amber); 
+    text-decoration: none; 
+    transition: color 0.4s ease; 
+  }
+  .explore-link:hover { 
+    color: #D97706; 
   }
 
-  /* Packages: Treasure Trove */
+  /* Packages: Treasure Vault */
   .treasure-trove { 
-    background: var(--deep-savanna); 
+    background: var(--deep-veld); 
     padding: 8rem 0; 
   }
   .treasure-trove .section-title { 
-    background: var(--fiery-sunset); 
-    color: #fff; 
+    background: var(--sunset-blaze); 
+    color: #FFF; 
+    padding: 1rem 2.5rem; 
+    border-radius: 30px; 
+    font-weight: 700; 
+    display: inline-block; 
   }
   .treasure-trove h1 { 
-    color: var(--text-elegant); 
+    color: var(--text-luminous); 
+    font-family: 'Playfair Display', serif; 
+    font-size: clamp(3rem, 5.5vw, 4rem); 
   }
   .treasure-trove .package-card { 
-    background: rgba(255, 255, 255, 0.05); 
-    backdrop-filter: blur(20px); 
+    background: rgba(255, 255, 255, 0.08); 
+    backdrop-filter: blur(15px); 
     border-radius: 25px; 
-    border: var(--border-luxe); 
-    transition: all 0.5s ease; 
+    border: var(--border-gleam); 
+    transition: all 0.5s var(--transition-ease); 
   }
   .treasure-trove .package-card:hover { 
-    transform: translateY(-15px); 
-    box-shadow: var(--shadow-epic); 
+    transform: translateY(-12px); 
+    box-shadow: var(--shadow-luxe); 
   }
-  .treasure-trove .package-img { 
+  .treasure-trove .card-img { 
     position: relative; 
-    height: 300px; 
+    height: 350px; 
+    overflow: hidden; 
   }
-  .treasure-trove .package-overlay { 
-    background: var(--overlay-dark); 
-    padding: 3rem; 
+  .treasure-trove .card-img img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.6s var(--transition-ease); 
   }
-  .treasure-trove .package-price { 
-    font-family: 'Merienda', cursive; 
-    font-size: 3rem; 
+  .treasure-trove .package-card:hover .card-img img { 
+    transform: scale(1.15); 
+  }
+  .treasure-trove .card-body { 
+    background: rgba(0, 0, 0, 0.8); 
+    padding: 2.5rem; 
+  }
+  .treasure-trove .text-warning { 
+    color: var(--safari-amber); 
   }
 
-  /* Special Sections: Legendary Sagas */
+  /* Legendary Saga: Serengeti Migration */
   .legendary-saga { 
     padding: 8rem 0; 
-    background: rgba(255, 255, 255, 0.98); 
+    background: linear-gradient(135deg, #1A2A6C 0%, #B21F1F 50%, #F4A261 100%); 
   }
   .legendary-saga .card { 
     border-radius: 25px; 
     overflow: hidden; 
-    box-shadow: var(--shadow-epic); 
-    border: var(--border-luxe); 
+    box-shadow: var(--shadow-luxe); 
+    border: var(--border-gleam); 
   }
   .legendary-saga .carousel-inner img { 
     height: 500px; 
     object-fit: cover; 
+    transition: transform 1s var(--transition-ease); 
+  }
+  .legendary-saga .carousel-item:hover img { 
+    transform: scale(1.15); 
   }
   .legendary-saga .card-body { 
-    background: var(--midnight-jungle); 
-    color: var(--text-elegant); 
+    background: var(--night-savanna); 
+    color: var(--text-luminous); 
     padding: 3rem; 
   }
   .legendary-saga h3 { 
-    color: #b21f1f; 
-    font-family: 'Merienda', cursive; 
+    color: #E53E3E; 
+    font-family: 'Playfair Display', serif; 
     font-size: 2rem; 
+    margin-bottom: 1.5rem; 
   }
   .legendary-saga .btn { 
-    background: var(--fiery-sunset); 
+    background: var(--sunset-blaze); 
     border-radius: 50px; 
     font-weight: 700; 
     padding: 1rem 2.5rem; 
+    transition: all 0.4s var(--transition-ease); 
+  }
+  .legendary-saga .btn:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px rgba(231, 111, 81, 0.5); 
+    filter: brightness(1.1); 
   }
 
-  /* Activities: Primal Rituals */
-  .primal-rituals { 
-    background: var(--deep-savanna); 
+  /* Honeymoon Hero: Romantic Escapes */
+  .honeymoon-hero { 
+    background: linear-gradient(135deg, #2A3C24 0%, #5C3F1A 50%, #D4A017 100%); 
     padding: 8rem 0; 
-  }
-  .primal-rituals .section-title { 
-    background: var(--fiery-sunset); 
-    color: #fff; 
-  }
-  .primal-rituals h1 { 
-    color: var(--text-elegant); 
-  }
-  .primal-rituals .activity-card { 
-    border-radius: 25px; 
+    position: relative; 
     overflow: hidden; 
-    box-shadow: var(--shadow-epic); 
-    border: var(--border-luxe); 
-    transition: all 0.5s ease; 
   }
-  .primal-rituals .activity-card:hover { 
-    transform: translateY(-10px); 
-  }
-  .primal-rituals .card-header { 
-    background: var(--fiery-sunset); 
-    color: #fff; 
+  .honeymoon-hero .section-title { 
+    background: var(--safari-amber); 
+    color: #000; 
+    padding: 1rem 2.5rem; 
+    border-radius: 30px; 
     font-weight: 700; 
   }
-  .primal-rituals .activity-image-container { 
-    height: 300px; 
+  .honeymoon-hero h1 { 
+    color: #FFF; 
+    font-family: 'Playfair Display', serif; 
+    font-size: clamp(3rem, 5.5vw, 4rem); 
   }
-  .primal-rituals .image-overlay { 
-    background: var(--overlay-dark); 
-  }
-  .primal-rituals .overlay-icons a { 
-    background: var(--safari-gold); 
-    color: #000; 
-    padding: 0.75rem 1.5rem; 
+  .honeymoon-hero .safari-card { 
     border-radius: 25px; 
-    transition: all 0.3s ease; 
+    overflow: hidden; 
+    box-shadow: var(--shadow-luxe); 
+    border: var(--border-gleam); 
   }
-  .primal-rituals .overlay-icons a:hover { 
-    transform: scale(1.1); 
+  .honeymoon-hero .safari-img-container { 
+    height: 500px; 
+    overflow: hidden; 
   }
-  .primal-rituals .itinerary-step { 
-    background: rgba(255, 255, 255, 0.1); 
-    border-radius: 20px; 
-    padding: 2rem; 
-    backdrop-filter: blur(10px); 
-    border: var(--border-luxe); 
-    transition: all 0.3s ease; 
-  }
-  .primal-rituals .itinerary-step:hover { 
-    transform: scale(1.05); 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
-  }
-
-  /* Mount Meru: Volcanic Majesty */
-  .volcanic-majesty { 
-    padding: 8rem 0; 
-    background: var(--midnight-jungle); 
-    position: relative; 
-  }
-  .volcanic-majesty::before { 
-    content: ''; 
-    position: absolute; 
-    top: 0; left: 0; 
-    width: 100%; height: 100%; 
-    background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%); 
-    z-index: 0; 
-  }
-  .volcanic-majesty .container { position: relative; z-index: 1; }
-  .volcanic-majesty h1 { 
-    color: var(--safari-gold); 
-    font-family: 'Times New Roman', serif; 
-    text-align: center; 
-    font-size: clamp(1.8rem, 3vw, 2.5rem); 
-    margin-bottom: 2rem; 
-  }
-  .volcanic-majesty p { 
-    color: var(--text-elegant); 
-    font-size: 1.1rem; 
-    text-align: center; 
-    max-width: 800px; 
-    margin: 0 auto 3rem; 
-  }
-  .volcanic-majesty img { 
-    border-radius: 25px; 
-    box-shadow: var(--shadow-epic); 
-    border: var(--border-luxe); 
-    max-height: 600px; 
-    width: 100%; 
+  .honeymoon-hero .safari-img { 
     object-fit: cover; 
+    height: 100%; 
+    width: 100%; 
+    transition: transform 0.6s var(--transition-ease); 
   }
-  .volcanic-majesty .info-card { 
-    background: rgba(255, 255, 255, 0.05); 
-    backdrop-filter: blur(15px); 
-    border-radius: 25px; 
-    padding: 4rem; 
-    text-align: center; 
-    box-shadow: var(--shadow-epic); 
-    border: var(--border-luxe); 
+  .honeymoon-hero .safari-card:hover .safari-img { 
+    transform: scale(1.15); 
   }
-  .volcanic-majesty .view-more { 
-    background: var(--fiery-sunset); 
-    color: #fff; 
+  .honeymoon-hero .safari-caption h3 { 
+    color: #F4A261; 
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.8rem; 
+  }
+  .honeymoon-hero .btn-safari-gold { 
+    background: var(--sunset-blaze); 
     border-radius: 50px; 
     font-weight: 700; 
     padding: 1rem 3rem; 
+    transition: all 0.4s var(--transition-ease); 
+  }
+  .honeymoon-hero .btn-safari-gold:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px rgba(231, 111, 81, 0.5); 
+    filter: brightness(1.1); 
   }
 
-  /* How to Book: Ritual of Passage */
-  .ritual-passage { 
-    background: var(--deep-savanna); 
-    padding: 8rem 0; 
-  }
-  .ritual-passage h3 { 
-    color: #ff0202; 
-    font-size: clamp(1.8rem, 3vw, 2.5rem); 
-    text-align: center; 
-    margin-bottom: 2rem; 
-    font-family: 'Merienda', cursive; 
-  }
-  .ritual-passage p { 
-    color: var(--text-elegant); 
-    font-size: 1.1rem; 
-    text-align: center; 
-    max-width: 800px; 
-    margin: 0 auto 3rem; 
-  }
-  .ritual-passage .step-card { 
-    background: rgba(250, 243, 224, 0.95); 
-    border-radius: 20px; 
-    padding: 3rem; 
-    box-shadow: var(--shadow-epic); 
-    border: var(--border-luxe); 
-    transition: all 0.4s ease; 
-    position: relative; 
-    overflow: hidden; 
-  }
-  .ritual-passage .step-card::before { 
-    content: ''; 
-    position: absolute; 
-    top: 0; left: 0; 
-    width: 100%; height: 4px; 
-    background: var(--fiery-sunset); 
-  }
-  .ritual-passage .step-card:hover { 
-    transform: translateY(-8px); 
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4); 
-  }
-  .ritual-passage .step-icon { 
-    font-size: 2.5rem; 
-    color: #004d40; 
-    margin-bottom: 1rem; 
-    transition: transform 0.3s ease; 
-  }
-  .ritual-passage .step-card:hover .step-icon { 
-    transform: scale(1.2); 
-  }
-  .ritual-passage h5 { 
-    color: #004d40; 
-    font-weight: 700; 
-    margin-bottom: 1rem; 
-  }
-  .ritual-passage p { 
-    color: #666; 
-  }
-  @media (max-width: 768px) { 
-    .ritual-passage .row { flex-direction: column; } 
+  /* Enhanced Mobile Responsiveness */
+  @media (max-width: 992px) { 
+    .hero-crest { font-size: clamp(2.5rem, 6vw, 3.5rem); } 
+    .hero-whisper { font-size: clamp(1rem, 2.5vw, 1.5rem); } 
+    .quest-oracle .form-control { padding: 1rem 2rem; font-size: 1rem; } 
+    .oracle-summon { padding: 0.8rem 2rem; font-size: 0.9rem; } 
+    .proclamation-spire { padding: 4rem 0; } 
+    .proclamation-spire h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); } 
+    .about-full-section { padding: 5rem 1rem; min-height: 70vh; } 
+    .about-title { font-size: clamp(2rem, 4vw, 2.8rem); } 
+    .about-text { font-size: clamp(0.9rem, 1.8vw, 1.1rem); } 
+    .opulent-gallery, .sacred-pillars, .kilimanjaro-section, .timeless-scrolls, .packing-scrolls, .exclusive-destinations, .treasure-trove, .legendary-saga, .honeymoon-hero { padding: 5rem 0; } 
+    .opulent-gallery .luxury-img-container { height: 200px; } 
+    .kilimanjaro-section .carousel-image-wrapper { height: 350px; } 
+    .kilimanjaro-section .carousel-caption-top h3 { font-size: clamp(1.4rem, 2.5vw, 1.6rem); } 
+    .scroll-container { grid-template-columns: 1fr; } 
+    .packing-grid { grid-template-columns: 1fr; } 
+    .destination-card .card-image { height: 180px; } 
+    .treasure-trove .card-img { height: 300px; } 
+    .legendary-saga .carousel-inner img { height: 400px; } 
+    .honeymoon-hero .safari-img-container { height: 400px; } 
   }
 
-  /* Testimonials: Echoes of Wanderers */
-  .echoes-wanderers { 
-    background: rgba(255, 255, 255, 0.98); 
-    padding: 8rem 0; 
-  }
-  .echoes-wanderers .section-title { 
-    background: #ff0000; 
-    color: #fff; 
-  }
-  .echoes-wanderers h1 { 
-    color: #1a1a2e; 
-    font-family: 'Merienda', cursive; 
-  }
-  .echoes-wanderers .testimonial-item { 
-    background: #fff; 
-    border-radius: 25px; 
-    padding: 4rem 3rem; 
-    box-shadow: var(--shadow-epic); 
-    border: var(--border-luxe); 
-    text-align: center; 
-    transition: all 0.4s ease; 
-    position: relative; 
-  }
-  .echoes-wanderers .testimonial-item::before { 
-    content: '"'; 
-    position: absolute; 
-    top: -1rem; left: 50%; 
-    transform: translateX(-50%); 
-    font-size: 6rem; 
-    color: var(--safari-gold); 
-    font-family: serif; 
-    opacity: 0.3; 
-  }
-  .echoes-wanderers .testimonial-item:hover { 
-    transform: translateY(-10px); 
-  }
-  .echoes-wanderers .testimonial-img { 
-    border: 4px solid var(--safari-gold); 
-    transition: transform 0.3s ease; 
-  }
-  .echoes-wanderers .testimonial-item:hover .testimonial-img { 
-    transform: scale(1.1); 
-  }
-  .echoes-wanderers h5 { 
-    color: #1a1a2e; 
-    font-weight: 700; 
-  }
-  .echoes-wanderers p { 
-    color: #666; 
-    font-style: italic; 
-    font-size: 1.1rem; 
+  @media (max-width: 576px) { 
+    .hero-crest { font-size: clamp(2rem, 5vw, 2.8rem); } 
+    .hero-whisper { font-size: clamp(0.9rem, 2vw, 1.2rem); } 
+    .quest-oracle { max-width: 90%; } 
+    .oracle-summon { right: 0.5rem; padding: 0.7rem 1.5rem; font-size: 0.85rem; } 
+    .proclamation-spire h1 { font-size: clamp(2rem, 4vw, 2.8rem); } 
+    .about-title { font-size: clamp(1.8rem, 3.5vw, 2.2rem); } 
+    .opulent-gallery .section-title { font-size: 0.9rem; padding: 0.8rem 2rem; } 
+    .opulent-gallery h1 { font-size: clamp(2rem, 4vw, 2.8rem); } 
+    .sacred-pillars h2 { font-size: clamp(2rem, 4vw, 2.8rem); } 
+    .kilimanjaro-section h1 { font-size: clamp(2rem, 4vw, 2.8rem); } 
+    .kilimanjaro-section .carousel-image-wrapper { height: 250px; } 
+    .treasure-trove h1 { font-size: clamp(2rem, 4vw, 2.8rem); } 
+    .legendary-saga h3 { font-size: 1.6rem; } 
+    .honeymoon-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); } 
   }
 
-  /* Blog: Chronicles of the Wild */
-  .chronicles-wild { 
-    background: var(--deep-savanna); 
-    padding: 8rem 0; 
-  }
-  .chronicles-wild .section-title { 
-    background: var(--safari-gold); 
-    color: #000; 
-  }
-  .chronicles-wild h2 { 
-    color: var(--text-elegant); 
-    font-family: 'Merienda', cursive; 
-  }
-  .chronicles-wild p { 
-    color: rgba(248, 249, 250, 0.9); 
-  }
-  .chronicles-wild .blog-card { 
-    border-radius: 25px; 
-    overflow: hidden; 
-    box-shadow: var(--shadow-epic); 
-    border: var(--border-luxe); 
-    transition: all 0.5s ease; 
-  }
-  .chronicles-wild .blog-card:hover { 
-    transform: translateY(-15px) rotateX(5deg); 
-  }
-  .chronicles-wild .blog-img { 
-    height: 300px; 
-    object-fit: cover; 
-  }
-  .chronicles-wild .blog-body { 
-    background: var(--midnight-jungle); 
-    padding: 3rem; 
-  }
-  .chronicles-wild .blog-title { 
-    color: var(--safari-gold); 
-    font-family: 'Merienda', cursive; 
-    font-size: 1.5rem; 
-  }
-  .chronicles-wild .btn-gold { 
-    background: var(--fiery-sunset); 
-    border-radius: 25px; 
-    font-weight: 700; 
-  }
-
-  /* Responsive Masterpiece */
-  @media (max-width: 768px) { 
-    .hero-crest { font-size: 2.5rem; } 
-    .narrative-saga .about-box { padding: 2rem; } 
-    .opulent-gallery, .sacred-pillars, .vast-horizon, .timeless-scrolls { padding: 4rem 0; } 
+  /* Parallax Effect for Hero */
+  .hero-vista[data-parallax] {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
   }
 </style>
 
-<div class="hero-vista">
+<div class="hero-vista" data-parallax>
   {% for item in home_text %}
-  <div id="welcomeCarousel{{ forloop.counter }}" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+  <div id="welcomeCarousel{{ forloop.counter }}" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
     <div class="carousel-inner">
       {% if item.image_1 %}
       <div class="carousel-item active">
@@ -1045,20 +1014,21 @@
     Your browser does not support HTML5 video.
   </video>
   {% endfor %}
+
   <div class="hero-veil"></div>
   <div class="hero-nexus">
     <div class="row w-100 justify-content-center text-center px-3">
-      <div class="col-lg-10">
+      <div class="col-lg-10 col-md-12">
         {% for i in home_text %}
         <h1 class="hero-crest">{{i.title}}</h1>
-        <h5 class="hero-whisper">{{i.subtitle}}</h5>
+        <h5 class="hero-whisper fs-5 mb-4">{{i.subtitle}}</h5>
         {% empty %}
-        <h1 class="hero-crest">Welcome to Yote Safari</h1>
+        <h1 class="hero-crest">Welcome to E.M Adventure</h1>
         <p class="hero-whisper fs-5 mb-4">Let Us Guide You to the Prime Wonders of Tanzania</p>
         {% endfor %}
         <div class="quest-oracle">
-          <input class="form-control" type="text" placeholder="Start booking..">
-          <button class="oracle-summon" data-bs-toggle="modal" data-bs-target="#tourPopup">Start</button>
+          <input class="form-control" type="text" placeholder="Search for your adventure...">
+          <button class="oracle-summon" data-bs-toggle="modal" data-bs-target="#tourPopup">Discover Now</button>
         </div>
       </div>
     </div>
@@ -1069,13 +1039,13 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title fw-bold text-primary">Welcome to Yote Safari Tanzania Adventures🌍</h5>
+        <h5 class="modal-title fw-bold">Welcome to Yote Safari Tanzania Adventures 🌍</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center px-4 py-5">
-        <h4 class="fw-bold mb-3">Plan Your Dream Safari</h4>
-        <p class="text-muted mb-4">Ready to create unforgettable memories? Scroll down and customize your perfect trip with our booking form.</p>
-        <a href="{% url 'form' %}"><button class="btn btn-gradient px-5 py-3"><i class="fas fa-arrow-down me-2"></i> Book Now</button></a>
+        <h4 class="fw-bold mb-3">Craft Your Dream Safari</h4>
+        <p class="text-muted mb-4">Ready to embark on an unforgettable journey? Explore our curated experiences and start planning your adventure today.</p>
+        <a href="{% url 'form' %}"><button class="btn btn-gradient px-5 py-3"><i class="fas fa-arrow-down me-2"></i> Start Planning</button></a>
       </div>
     </div>
   </div>
@@ -1101,126 +1071,40 @@
 {% for i in abouts %}
 <section class="about-full-section d-flex align-items-center">
   <div class="container text-center">
-    <div class="section-heading mb-4 wow fadeInDown" data-wow-delay="0.2s">
+    <div class="section-heading mb-4">
       <div class="decor-line mb-2">
         <span class="line short"></span>
         <span class="line long"></span>
       </div>
-      <h2 class="section-label text-uppercase">Our Story</h2>
+      <h2 class="section-label text-uppercase">Our Legacy</h2>
       <div class="decor-line mt-2">
         <span class="line short"></span>
         <span class="line long"></span>
       </div>
     </div>
 
-    <h1 class="about-title wow fadeInUp" data-wow-delay="0.4s">{{ i.title }}</h1>
-    <p class="about-text mx-auto wow fadeInUp" data-wow-delay="0.6s">{{ i.content }}</p>
-
-    <a href="{% url 'about' %}" class="btn btn-about px-5 py-3 mt-3 wow fadeInUp" data-wow-delay="0.8s" onclick="showLoading(event)">
-      Read More <i class="fas fa-arrow-right ms-2"></i>
+    <h1 class="about-title">{{ i.title }}</h1>
+    <p class="about-text mx-auto">{{ i.content|truncatechars:450 }}</p>
+    <a href="{% url 'about' %}" class="btn btn-about px-5 py-3 mt-3" onclick="showLoading(event)">
+      Discover More <i class="fas fa-arrow-right ms-2"></i>
     </a>
   </div>
 </section>
 {% endfor %}
 {% else %}
 <div class="alert alert-info text-center py-5">
-  <h4>Information about our organization will be available soon.</h4>
+  <h4>Our story is being crafted and will be shared soon.</h4>
 </div>
 {% endif %}
 
-<!-- Styles -->
-<style>
-  .about-full-section {
-    min-height: 80vh;
-    padding: 4rem 1rem;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e6eef7 100%);
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .section-label {
-    font-size: 0.9rem;
-    letter-spacing: 3px;
-    font-weight: 600;
-    color: #d4af37;
-  }
-  .decor-line {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-  }
-  .decor-line .line {
-    display: block;
-    height: 2px;
-    background: #d4af37;
-    border-radius: 50px;
-  }
-  .decor-line .line.short { width: 30px; }
-  .decor-line .line.long { width: 60px; }
-
-  .about-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 1rem;
-  }
-
-  .about-text {
-    max-width: 800px;
-    color: #444;
-    line-height: 1.8;
-    font-size: 1.05rem;
-  }
-
-  .btn-about {
-    background: linear-gradient(45deg, #d4af37, #f5d76e);
-    color: #000;
-    font-weight: 600;
-    border: none;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-  }
-  .btn-about:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
-    color: #000;
-  }
-
-  /* Responsive */
-  @media (max-width: 767px) {
-    .about-title {
-      font-size: 1.8rem;
-    }
-    .about-text {
-      font-size: 0.95rem;
-    }
-  }
-</style>
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-
-
 <div class="opulent-gallery py-5">
   <div class="container">
-    <!-- Section Header -->
-    <div class="text-center mb-5 wow fadeIn" data-wow-delay="0.2s">
-      <h6 class="section-title mb-0 text-uppercase tracking-widest" style="letter-spacing: 3px; color: #d4af37; font-weight: 600;">
-        <i class="fas fa-crown me-2"></i>Premium Services
-      </h6>
-      <h1 class="display-5 fw-light mb-3" style="color: #fff; font-family: 'Playfair Display', serif;">
-        Explore Our <span class="fw-bold gold-gradient-text">Exclusive Services</span>
-      </h1>
+    <div class="text-center mb-5">
+      <h6 class="section-title mb-0 text-uppercase tracking-widest"><i class="fas fa-crown me-2"></i>Premium Experiences</h6>
+      <h1 class="display-5 fw-light mb-3">Discover Our <span class="fw-bold gold-gradient-text">Signature Services</span></h1>
       <div class="mx-auto section-divider"></div>
     </div>
 
-    <!-- Services Grid -->
     <div class="row g-5">
       {% for service in services %}
       <div class="col-xl-3 col-lg-4 col-md-6">
@@ -1229,11 +1113,11 @@
             <img src="{{ service.image }}" alt="{{ service.title }}" class="luxury-img">
             <div class="img-overlay"></div>
           </div>
-          <div class="card-body text-center py-3">
+          <div class="card-body text-center py-4">
             <h5 class="mb-2 service-title">{{ service.title }}</h5>
             <p class="service-desc">{{ service.description|truncatechars:90 }}</p>
             <a href="{% url 'service' %}" class="btn btn-gold btn-sm rounded-pill hover-grow" onclick="showLoading(event)">
-              <i class="fas fa-arrow-right me-1"></i> Learn More
+              <i class="fas fa-arrow-right me-1"></i> Explore Now
             </a>
           </div>
         </div>
@@ -1241,191 +1125,87 @@
       {% endfor %}
     </div>
 
-    <!-- View All Button -->
     <div class="text-center mt-6 pt-4">
       <a href="{% url 'service' %}" class="btn btn-dark btn-lg rounded-pill px-5 py-3 shadow hover-grow position-relative overflow-hidden gold-border" onclick="showLoading(event)">
-        <span class="position-relative z-2">Explore All Services <i class="fas fa-arrow-right ms-2"></i></span>
+        <span class="position-relative z-2">View All Services <i class="fas fa-arrow-right ms-2"></i></span>
       </a>
     </div>
   </div>
 </div>
 <style>
-
-.opulent-gallery {
-  background: linear-gradient(180deg, #0b0c10 0%, #1a1a1a 100%);
-  color: #fff;
-}
-
-.gold-gradient-text {
-  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.section-divider {
-  width: 120px;
-  height: 3px;
-  background: linear-gradient(90deg, rgba(212,175,55,0) 0%, #d4af37 50%, rgba(212,175,55,0) 100%);
-  border-radius: 50px;
-}
-
-.service-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(6px);
-  border-radius: 15px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
-}
-
-.luxury-img-container {
-  position: relative;
-  height: 220px;
-  overflow: hidden;
-}
-.luxury-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-.luxury-img-container:hover .luxury-img {
-  transform: scale(1.08);
-}
-.img-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
-}
-
-.service-title {
-  font-family: 'Playfair Display', serif;
-  color: #d4af37;
-  font-weight: 600;
-}
-.service-desc {
-  color: #eee;
-  font-size: 0.9rem;
-  min-height: 50px;
-}
-
-.btn-gold {
-  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
-  color: #000;
-  font-weight: 600;
-  transition: transform 0.3s ease;
-}
-.btn-gold:hover {
-  transform: translateY(-3px);
-  color: #000;
-}
-
-.hover-grow {
-  transition: transform 0.3s ease;
-}
-.hover-grow:hover {
-  transform: scale(1.05);
-}
-
-.gold-border {
-  border: 1px solid rgba(212, 175, 55, 0.4) !important;
-}
+.opulent-gallery { background: var(--night-savanna); }
+.gold-gradient-text { background: var(--sunset-blaze); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.section-divider { width: 130px; height: 4px; background: linear-gradient(90deg, rgba(244,162,97,0) 0%, var(--safari-amber) 50%, rgba(244,162,97,0) 100%); border-radius: 50px; }
+.service-card { background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(8px); border-radius: 20px; transition: transform 0.5s var(--transition-ease), box-shadow 0.5s var(--transition-ease); }
+.service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(244, 162, 97, 0.25); }
+.luxury-img-container { position: relative; height: 240px; overflow: hidden; }
+.luxury-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--transition-ease); }
+.luxury-img-container:hover .luxury-img { transform: scale(1.1); }
+.img-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%); }
+.service-title { font-family: 'Playfair Display', serif; color: var(--safari-amber); font-weight: 700; }
+.service-desc { color: #EEE; font-size: 0.95rem; min-height: 60px; }
+.btn-gold { background: var(--sunset-blaze); color: #000; font-weight: 700; transition: transform 0.4s var(--transition-ease); }
+.btn-gold:hover { transform: translateY(-4px); color: #000; }
+.hover-grow { transition: transform 0.4s var(--transition-ease); }
+.hover-grow:hover { transform: scale(1.06); }
+.gold-border { border: 1px solid rgba(244, 162, 97, 0.5) !important; }
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div class="sacred-pillars">
   <div class="container">
     <div class="text-center mb-5">
-      <h2 class="text-uppercase fw-bold">Why Travel with <span class="text-warning">Yote Safari Tanzania Adventure</span></h2>
-      <p class="text-danger fst-italic lead">More than just a journey — it's a life-changing experience.</p>
+      <h2 class="text-uppercase fw-bold">Why Choose <span class="text-warning">Yote Safari Tanzania Adventure</span></h2>
+      <p class="text-danger fst-italic lead">An adventure that transforms your soul.</p>
     </div>
     <div class="row g-4">
       <div class="col-md-4">
         <div class="pillar">
           <i class="fas fa-map-marked-alt"></i>
           <h5>Authentic Local Expertise</h5>
-          <p>All our guides were born and raised near Mt. Kilimanjaro. They know every trail, every tale, and every secret of the mountain. You're not just climbing — you're learning the mountain's soul.</p>
+          <p>Our guides, born near Mt. Kilimanjaro, share the mountain's secrets, stories, and soul, ensuring an immersive experience.</p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="pillar">
           <i class="fas fa-shield-alt"></i>
           <h5>Unmatched Safety Standards</h5>
-          <p>Your safety is our mission. From daily health checks to high-altitude gear and oxygen support, we follow international standards to keep you secure throughout your climb.</p>
+          <p>From daily health checks to premium high-altitude gear, we prioritize your safety with world-class standards.</p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="pillar">
           <i class="fas fa-heart"></i>
           <h5>Heartfelt, Lasting Memories</h5>
-          <p>Experience the mountain with deep connection — singing with porters, celebrating at Uhuru Peak, and sharing fireside stories. Every moment becomes a memory.</p>
+          <p>From singing with porters to celebrating at Uhuru Peak, every moment is crafted to leave a lasting impact.</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-
-
-<div class="kilimanjaro-section py-5" style="background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 35%, #3e2f00 100%); color: #eee; position: relative; overflow: hidden;">
-  <!-- Decorative icons background -->
+<div class="kilimanjaro-section py-5">
   <div class="bg-icons">
     <i class="fas fa-mountain icon-1"></i>
     <i class="fas fa-compass icon-2"></i>
     <i class="fas fa-binoculars icon-3"></i>
     <i class="fas fa-hiking icon-4"></i>
   </div>
-
   <div class="container position-relative">
-    <!-- Heading -->
-    <div class="text-center mb-5 wow fadeIn" data-wow-delay="0.2s">
-      <div class="d-inline-flex align-items-center justify-content-center mb-2" style="gap: 8px;">
-        <i class="fas fa-crown" style="color: #d4af37; font-size: 1.2rem;"></i>
-        <span class="text-uppercase" style="color: #d4af37; letter-spacing: 3px; font-weight: 600;">
-          Premium Adventures
-        </span>
+    <div class="text-center mb-5">
+      <div class="d-inline-flex align-items-center justify-content-center mb-2" style="gap: 10px;">
+        <i class="fas fa-crown" style="color: var(--safari-amber); font-size: 1.3rem;"></i>
+        <span class="text-uppercase" style="color: var(--safari-amber); letter-spacing: 3.5px; font-weight: 700;">Epic Journeys</span>
       </div>
-      <h1 class="display-5 fw-bold mb-3" style="font-family: 'Playfair Display', serif; color: #fff;">
-        Mt Kilimanjaro Climbing & Tanzania Safaris
-      </h1>
-      <div class="mx-auto mb-4" style="width: 180px; height: 4px; background: linear-gradient(90deg, rgba(212,175,55,0) 0%, #d4af37 50%, rgba(212,175,55,0) 100%); border-radius: 50px;"></div>
+      <h1 class="display-5 fw-bold mb-3">Mt Kilimanjaro & Tanzania Safaris</h1>
+      <div class="mx-auto mb-4" style="width: 200px; height: 5px; background: linear-gradient(90deg, rgba(244,162,97,0) 0%, var(--safari-amber) 50%, rgba(244,162,97,0) 100%); border-radius: 50px;"></div>
     </div>
-
-    <!-- Description -->
     <div class="row justify-content-center mb-5">
       <div class="col-lg-10 text-center">
-        <p class="lead" style="line-height: 1.9; color: #f1f1f1; max-width: 800px; margin: auto;">
-          <i class="fas fa-quote-left me-2 text-gold"></i>
-          Embark on unforgettable <strong>Mt Kilimanjaro climbing</strong> and conquer Africa's highest peak. Choose iconic routes like <strong>Machame</strong>, <strong>Lemosho</strong>, or <strong>Marangu</strong>, each offering breathtaking scenery and a once-in-a-lifetime trekking experience.
-        </p>
-        <p style="line-height: 1.9; color: #ddd; max-width: 800px; margin: 15px auto 0;">
-          After your climb, explore <strong>Serengeti</strong>, <strong>Ngorongoro Crater</strong>, and <strong>Tarangire</strong> on luxurious safaris with gourmet lodges, personalized service, and encounters with the legendary Big Five.
-        </p>
+        <p class="lead">Conquer <strong>Mt Kilimanjaro</strong> via iconic routes like <strong>Machame</strong>, <strong>Lemosho</strong>, or <strong>Marangu</strong>, each offering unparalleled views and adventure.</p>
+        <p>Extend your journey with luxurious safaris in <strong>Serengeti</strong>, <strong>Ngorongoro Crater</strong>, and <strong>Tarangire</strong>, featuring gourmet lodges and Big Five encounters.</p>
       </div>
     </div>
-
-    <!-- Carousel -->
-    <div id="safariCarousel" class="carousel slide shadow-lg rounded-4 overflow-hidden wow fadeInUp" data-bs-ride="carousel" data-wow-delay="0.4s">
+    <div id="safariCarousel" class="carousel slide shadow-lg rounded-4 overflow-hidden">
       <div class="carousel-inner">
         {% for item in climbing %}
           {% if item.image_1 %}
@@ -1485,7 +1265,6 @@
           {% endif %}
         {% endfor %}
       </div>
-
       <button class="carousel-control-prev" type="button" data-bs-target="#safariCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -1498,84 +1277,24 @@
   </div>
 </div>
 
-<style>
-.text-gold { color: #d4af37; }
-
-.bg-icons i {
-  position: absolute;
-  font-size: 5rem;
-  opacity: 0.05;
-  color: #d4af37;
-  animation: floatIcon 15s infinite ease-in-out;
-}
-.icon-1 { top: 10%; left: 5%; }
-.icon-2 { top: 50%; right: 10%; font-size: 6rem; }
-.icon-3 { bottom: 15%; left: 20%; }
-.icon-4 { top: 30%; right: 25%; font-size: 4.5rem; }
-
-@keyframes floatIcon {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-.carousel-image-wrapper {
-  position: relative;
-  height: 500px;
-}
-.carousel-image-wrapper img {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
-.carousel-overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0) 100%);
-}
-.carousel-caption-top {
-  position: absolute;
-  top: 35px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  animation: fadeDown 1s ease forwards;
-}
-.carousel-caption-top h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 600;
-  text-shadow: 0 0 15px rgba(0,0,0,0.3);
-}
-@keyframes fadeDown {
-  from { opacity: 0; transform: translate(-50%, -20px); }
-  to { opacity: 1; transform: translate(-50%, 0); }
-}
-</style>
-
-
-
 <div class="timeless-scrolls">
   <div class="container">
     <h2>🧭 Best Time to Climb Mount Kilimanjaro</h2>
-    <p>Mount Kilimanjaro, the highest peak in Africa, offers different climbing experiences throughout the year. Choosing the right time to climb increases your chances of reaching the summit and enjoying breathtaking views.</p>
+    <p>Plan your ascent of Africa's highest peak with optimal timing for clear views and safer trails.</p>
     <div class="scroll-container">
       <div class="scroll-vault">
         <h2 class="text-success">🌞 Recommended Seasons:</h2>
         <ul class="recommended-scroll">
-          <li>✔️ <strong>January to early March</strong> – Warm conditions, moderate traffic, clear views.</li>
-          <li>✔️ <strong>June to October</strong> – Dry season, excellent visibility, most popular period.</li>
+          <li>✔️ <strong>January to early March</strong> – Warm, moderate traffic, stunning vistas.</li>
+          <li>✔️ <strong>June to October</strong> – Dry season, peak visibility, ideal for climbing.</li>
         </ul>
       </div>
       <div class="scroll-vault">
         <p class="avoid-scroll">
           <h6 class="text-danger fw-semibold">🚫 Avoid These Months:</h6>
-          April to May and November – These are the rainy seasons, trails become muddy and slippery, visibility is low, and summit success rates drop significantly.
+          April to May and November – Rainy seasons bring muddy trails, low visibility, and reduced summit success.
         </p>
-        <img src="{% static 'img/Kilimanjaro.jpg' %}" alt="Kilimanjaro Season" class="img-fluid rounded-4 border border-warning shadow-lg" style="max-height: 450px; object-fit: cover;">
+        <img src="{% static 'img/Kilimanjaro.jpg' %}" alt="Kilimanjaro Season" class="img-fluid rounded-4 border border-warning shadow-lg" style="max-height: 500px; object-fit: cover;">
       </div>
     </div>
   </div>
@@ -1583,47 +1302,47 @@
 
 <div class="packing-scrolls">
   <div class="container">
-    <h2>🧳 Important Things to Pack for Climbing Mount Kilimanjaro</h2>
-    <p>Preparing for your Kilimanjaro climb is more than just stuffing a bag—it's about choosing the right gear that will keep you warm, dry, and energized from rainforest to the roof of Africa. Here's a complete guide to packing smart and safely.</p>
+    <h2>🧳 Essential Packing for Kilimanjaro</h2>
+    <p>Pack smart to stay comfortable and safe from rainforest to summit.</p>
     <div class="packing-grid">
       <div class="packing-vault">
         <div class="packing-icon">🧥</div>
         <h5 style="color: #000;">Technical Clothing</h5>
         <ul>
-          <li><strong>Thermal underwear:</strong> Base layer to keep you warm.</li>
-          <li><strong>Insulated mid-layers:</strong> Fleece/down jackets for warmth.</li>
-          <li><strong>Waterproof outer layers:</strong> Jacket and trousers for wind/rain protection.</li>
-          <li><strong>Wool socks & gloves:</strong> Multiple pairs to stay dry and warm.</li>
-          <li><strong>Neck gaiter / Buff:</strong> For dust, wind and cold protection.</li>
-          <li><strong>Sun hat & beanie:</strong> Daytime sun and night-time cold.</li>
-          <li><strong>High-quality hiking boots:</strong> Waterproof and broken-in.</li>
+          <li><strong>Thermal underwear:</strong> Base layer for warmth.</li>
+          <li><strong>Insulated mid-layers:</strong> Fleece/down jackets.</li>
+          <li><strong>Waterproof outer layers:</strong> Jacket and trousers.</li>
+          <li><strong>Wool socks & gloves:</strong> Multiple pairs.</li>
+          <li><strong>Neck gaiter / Buff:</strong> Dust and cold protection.</li>
+          <li><strong>Sun hat & beanie:</strong> Sun and cold coverage.</li>
+          <li><strong>Hiking boots:</strong> Waterproof, broken-in.</li>
         </ul>
       </div>
       <div class="packing-vault">
         <div class="packing-icon">💊</div>
         <h5 style="color: #000;">Health & Hygiene</h5>
         <ul>
-          <li><strong>Altitude meds:</strong> E.g. Diamox (consult doctor).</li>
-          <li><strong>First aid kit:</strong> Plasters, painkillers, antiseptic.</li>
-          <li><strong>Sunscreen SPF 30+:</strong> UV protection at high altitudes.</li>
-          <li><strong>Biodegradable wipes:</strong> For body cleaning in camps.</li>
-          <li><strong>Hand sanitizer:</strong> Cleanliness when water is limited.</li>
-          <li><strong>Lip balm with SPF:</strong> Prevent chapping and sunburn.</li>
-          <li><strong>Toilet paper:</strong> Always carry your own!</li>
+          <li><strong>Altitude meds:</strong> Diamox (consult doctor).</li>
+          <li><strong>First aid kit:</strong> Plasters, painkillers.</li>
+          <li><strong>Sunscreen SPF 30+:</strong> High-altitude UV protection.</li>
+          <li><strong>Biodegradable wipes:</strong> For camp hygiene.</li>
+          <li><strong>Hand sanitizer:</strong> Quick cleanliness.</li>
+          <li><strong>Lip balm with SPF:</strong> Prevent chapping.</li>
+          <li><strong>Toilet paper:</strong> Essential backup.</li>
         </ul>
       </div>
       <div class="packing-vault">
         <div class="packing-icon">🎒</div>
         <h5 style="color: #000;">Essentials & Accessories</h5>
         <ul>
-          <li><strong>Backpack (30-40L):</strong> For day essentials.</li>
-          <li><strong>Headlamp:</strong> Required for summit night.</li>
-          <li><strong>Water bottles (3L total):</strong> Stay hydrated daily.</li>
+          <li><strong>Backpack (30-40L):</strong> Day essentials.</li>
+          <li><strong>Headlamp:</strong> For summit night.</li>
+          <li><strong>Water bottles (3L):</strong> Stay hydrated.</li>
           <li><strong>Energy snacks:</strong> Bars, nuts, chocolate.</li>
-          <li><strong>Camera or GoPro:</strong> Capture your experience!</li>
-          <li><strong>Power bank:</strong> Keep electronics charged.</li>
-          <li><strong>Trekking poles:</strong> Support on steep descents.</li>
-          <li><strong>Dry bags:</strong> Keep gear dry inside your pack.</li>
+          <li><strong>Camera or GoPro:</strong> Capture moments.</li>
+          <li><strong>Power bank:</strong> Keep devices charged.</li>
+          <li><strong>Trekking poles:</strong> Support for descents.</li>
+          <li><strong>Dry bags:</strong> Keep gear dry.</li>
         </ul>
       </div>
     </div>
@@ -1633,21 +1352,21 @@
 <div class="timeless-scrolls">
   <div class="container">
     <h2>🦁 Best Time for Tanzania Safari</h2>
-    <p>Tanzania is home to world-famous safari destinations such as Serengeti, Ngorongoro Crater, and Tarangire. Choosing the right season ensures you'll witness incredible wildlife moments, from the Great Migration to big cat sightings.</p>
+    <p>Time your safari to witness the Great Migration and vibrant wildlife in Serengeti, Ngorongoro, and Tarangire.</p>
     <div class="scroll-container">
       <div class="scroll-vault">
         <h2 class="text-success">🌞 Recommended Seasons:</h2>
         <ul class="recommended-scroll">
-          <li>✔️ <strong>June to October</strong> – Dry season, best for game viewing, animals gather around water sources.</li>
-          <li>✔️ <strong>December to March</strong> – Calving season in Serengeti, plenty of predator action, lush landscapes.</li>
+          <li>✔️ <strong>June to October</strong> – Dry season, ideal for game viewing.</li>
+          <li>✔️ <strong>December to March</strong> – Calving season, lush landscapes.</li>
         </ul>
       </div>
       <div class="scroll-vault">
         <p class="avoid-scroll">
           <h6 class="text-danger fw-semibold">🚫 Avoid These Months:</h6>
-          April and May – Heavy rains make roads muddy, some lodges close, and wildlife viewing becomes difficult.
+          April and May – Heavy rains, muddy roads, limited wildlife visibility.
         </p>
-        <img src="{% static 'img/safari.webp' %}" alt="Tanzania Safari Season" class="img-fluid rounded-4 border border-warning shadow-lg" style="max-height: 450px; object-fit: cover;">
+        <img src="{% static 'img/safari.webp' %}" alt="Tanzania Safari Season" class="img-fluid rounded-4 border border-warning shadow-lg" style="max-height: 500px; object-fit: cover;">
       </div>
     </div>
   </div>
@@ -1655,41 +1374,41 @@
 
 <div class="packing-scrolls">
   <div class="container">
-    <h2>🧳 What to Pack for a Tanzania Safari</h2>
-    <p>A safari is not only about the destination but also about being well-prepared. The right clothing, health essentials, and accessories will make your adventure safe, comfortable, and unforgettable.</p>
+    <h2>🧳 Safari Packing Essentials</h2>
+    <p>Be prepared for an unforgettable safari with these must-have items.</p>
     <div class="packing-grid">
       <div class="packing-vault">
         <div class="packing-icon">🧥</div>
-        <h5 style="color: #bd9309;">Safari Clothing</h5>
+        <h5 style="color: var(--safari-amber);">Safari Clothing</h5>
         <ul>
-          <li><strong>Lightweight neutral-colored clothes:</strong> Blend with nature, avoid bright colors.</li>
-          <li><strong>Warm jacket:</strong> Early morning & evening drives can be cold.</li>
-          <li><strong>Hat & sunglasses:</strong> Sun protection is essential.</li>
-          <li><strong>Comfortable walking shoes:</strong> For bush walks & camp use.</li>
-          <li><strong>Rain jacket:</strong> Handy during unpredictable showers.</li>
+          <li><strong>Neutral-colored clothes:</strong> Blend with nature.</li>
+          <li><strong>Warm jacket:</strong> For cold mornings/evenings.</li>
+          <li><strong>Hat & sunglasses:</strong> Sun protection.</li>
+          <li><strong>Walking shoes:</strong> For bush walks.</li>
+          <li><strong>Rain jacket:</strong> For unpredictable showers.</li>
         </ul>
       </div>
       <div class="packing-vault">
         <div class="packing-icon">💊</div>
-        <h5 style="color: #bd9309;">Health & Hygiene</h5>
+        <h5 style="color: var(--safari-amber);">Health & Hygiene</h5>
         <ul>
-          <li><strong>Malaria prophylaxis:</strong> Consult your doctor before travel.</li>
-          <li><strong>First aid kit:</strong> Basic meds & plasters.</li>
-          <li><strong>Sunscreen SPF 30+:</strong> Intense African sun.</li>
-          <li><strong>Insect repellent:</strong> Especially for evenings.</li>
-          <li><strong>Hand sanitizer & wipes:</strong> For quick hygiene.</li>
+          <li><strong>Malaria prophylaxis:</strong> Consult doctor.</li>
+          <li><strong>First aid kit:</strong> Basic meds, plasters.</li>
+          <li><strong>Sunscreen SPF 30+:</strong> Intense sun protection.</li>
+          <li><strong>Insect repellent:</strong> Evening protection.</li>
+          <li><strong>Hand sanitizer & wipes:</strong> Quick hygiene.</li>
         </ul>
       </div>
       <div class="packing-vault">
         <div class="packing-icon">🎒</div>
-        <h5 style="color: #bd9309;">Safari Essentials</h5>
+        <h5 style="color: var(--safari-amber);">Safari Essentials</h5>
         <ul>
-          <li><strong>Binoculars:</strong> Get closer views of wildlife.</li>
-          <li><strong>Camera with zoom lens:</strong> Capture unforgettable moments.</li>
+          <li><strong>Binoculars:</strong> Close-up wildlife views.</li>
+          <li><strong>Camera with zoom:</strong> Capture moments.</li>
           <li><strong>Power bank:</strong> Keep devices charged.</li>
           <li><strong>Reusable water bottle:</strong> Stay hydrated.</li>
-          <li><strong>Travel documents:</strong> Passport, insurance, permits.</li>
-          <li><strong>Field guide book:</strong> Learn about wildlife & birds.</li>
+          <li><strong>Travel documents:</strong> Passport, insurance.</li>
+          <li><strong>Field guide book:</strong> Learn about wildlife.</li>
         </ul>
       </div>
     </div>
@@ -1700,13 +1419,13 @@
   <div class="container">
     <div class="section-header text-center mb-5">
       <div class="luxury-label d-inline-block px-4 py-2 mb-3">
-        <i class="fas fa-crown me-2"></i> Curated Selection
+        <i class="fas fa-crown me-2"></i> Handpicked Escapes
       </div>
       <h1 class="display-5 fw-bold mb-2 title">
-        Tanzania <span class="highlight">Most Exclusive</span> Destinations
+        Tanzania <span class="highlight">Premier</span> Destinations
       </h1>
       <div class="luxury-divider mx-auto"></div>
-      <p class="text-muted mt-3 mb-0">Discover breathtaking, handpicked luxury escapes ✨</p>
+      <p class="text-muted mt-3 mb-0">Explore Tanzania's most breathtaking destinations ✨</p>
     </div>
 
     <div class="row g-4">
@@ -1742,186 +1461,20 @@
   </div>
 </section>
 
-<style>
-/* Background */
-.exclusive-destinations {
-  background: linear-gradient(135deg, #fff 0%, #f8f5f0 35%, #f1e6d1 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.exclusive-destinations::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  left: -50px;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, #d4af37 0%, transparent 70%);
-  opacity: 0.3;
-  filter: blur(40px);
-}
-
-.exclusive-destinations::after {
-  content: "";
-  position: absolute;
-  bottom: -50px;
-  right: -50px;
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, #f1d98c 0%, transparent 70%);
-  opacity: 0.3;
-  filter: blur(40px);
-}
-
-/* Header */
-.section-header .luxury-label {
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid #e5d5a3;
-  border-radius: 30px;
-  font-weight: 600;
-  color: #c8a742;
-  backdrop-filter: blur(10px);
-}
-
-.section-header .title {
-  font-family: 'Playfair Display', serif;
-  color: #333;
-}
-
-.section-header .highlight {
-  background: linear-gradient(135deg, #d4af37, #f4d03f);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.luxury-divider {
-  width: 140px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent 0%, #d4af37 50%, transparent 100%);
-  border-radius: 50px;
-}
-
-/* Destination Cards */
-.destination-card {
-  background: #fff;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  position: relative;
-}
-
-.destination-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
-
-.card-image {
-  position: relative;
-  height: 220px;
-  overflow: hidden;
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.destination-card:hover .card-image img {
-  transform: scale(1.1);
-}
-
-.badge {
-  position: absolute;
-  top: 15px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border-radius: 30px;
-  backdrop-filter: blur(8px);
-}
-
-.badge.offer {
-  left: 15px;
-  background: rgba(0,0,0,0.6);
-  color: #d4af37;
-  padding: 5px 12px;
-}
-
-.badge.exclusive {
-  right: 15px;
-  background: rgba(212,175,55,0.15);
-  color: #333;
-  padding: 5px 12px;
-}
-
-.card-content {
-  padding: 1rem 1.2rem;
-  text-align: left;
-}
-
-.card-content h5 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-}
-
-.card-content p {
-  color: #777;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.text-gold {
-  color: #d4af37;
-}
-
-.btn-luxury {
-  background: linear-gradient(135deg, #d4af37, #f4d03f);
-  color: #000;
-  font-weight: 600;
-  border: none;
-  border-radius: 30px;
-  padding: 8px 18px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-luxury:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-  color: #000;
-}
-
-.explore-link {
-  display: inline-block;
-  font-weight: 600;
-  color: #c8a742;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.explore-link:hover {
-  color: #a07c2f;
-}
-</style>
-
-
 <div class="treasure-trove">
   <div class="container">
-    <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="text-center mb-5">
       <h6 class="section-title text-center text-warning bg-dark px-3 rounded-pill">Our Packages</h6>
-      <h1 class="display-5 fw-bold text-danger">Unforgettable Safari & Trekking Adventures</h1>
-      <p class=" fw-bold text-dark">Choose from our expertly crafted tours — whether it's conquering Mount Kilimanjaro or exploring Tanzania's wild plains.</p>
+      <h1 class="display-5 fw-bold text-danger">Epic Safari & Trekking Journeys</h1>
+      <p class="fw-bold text-white">Select from our curated tours for an unforgettable adventure.</p>
     </div>
     <div class="row g-4 justify-content-center">
       {% for pac in safari_list %}
-      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="card package-card bg-transparent text-white border-0 shadow-lg overflow-hidden" style="border-radius: 20px;">
-          <div class="card-img position-relative" style="height: 350px; background: url('{{ pac.featured_image }}') center center/cover no-repeat;">
-            <div class="position-absolute top-0 start-0 w-100 h-100" style="background:  rgba(7, 7, 7, 0.342);"></div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card package-card bg-transparent text-white border-0 shadow-lg overflow-hidden">
+          <div class="card-img position-relative">
+            <img src="{{ pac.featured_image }}" alt="{{ pac.location }}">
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(7, 7, 7, 0.4);"></div>
             <div class="position-absolute bottom-0 start-0 p-4">
               <h4 class="fw-bold text-warning mb-1">{{ pac.location }}</h4>
               <small class="text-light">{{ pac.days }} Days {{ pac.safari_type }}</small>
@@ -1941,6 +1494,7 @@
     </div>
   </div>
 </div>
+
 
 <section class="legendary-saga py-5t" style="background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);">
   <div class="container">

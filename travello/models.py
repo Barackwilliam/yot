@@ -474,8 +474,8 @@ class company(models.Model):
 
 
 class Welcome_text(models.Model):
-    title = models.CharField(max_length=100)
-    subtitle = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, blank=True, null=True)
+    subtitle = models.CharField(max_length=100, blank=True, null=True)
     image_1 = models.CharField(max_length=255, blank=True, null=True)  
     image_2 = models.CharField(max_length=255, blank=True, null=True)  
     image_3 = models.CharField(max_length=255, blank=True, null=True)  

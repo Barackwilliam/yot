@@ -26,7 +26,7 @@ GEOIP_PATH = '/path/to/GeoIP/database/'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 CSRF_TRUSTED_ORIGINS = [
-    'https://yotesafari.com',
+    'https://emadventure.com',
     'http://localhost:8000',
 ]
 
@@ -124,19 +124,21 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres', 
-        'USER': 'postgres.xfdsaxdhdavfchbdbohw',  
-        'PASSWORD': 'Nyumbachap', 
-        'HOST': 'aws-1-us-east-2.pooler.supabase.com',  
+        'USER': 'postgres.kernujrtkwappagevvvh',  
+        'PASSWORD': 'NyumbaChap', 
+        'HOST': 'aws-1-eu-north-1.pooler.supabase.com',  
         'PORT': '5432',  
     }
 }
 
-# user=postgres.xfdsaxdhdavfchbdbohw 
+
+# NyumbaChap
+# user=postgres.kernujrtkwappagevvvh 
 # password=[YOUR-PASSWORD] 
-# host=aws-1-us-east-2.pooler.supabase.com
+# host=aws-1-eu-north-1.pooler.supabase.com
 # port=5432
 # dbname=postgres
-# Password validation
+
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
