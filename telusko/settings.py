@@ -26,7 +26,7 @@ GEOIP_PATH = '/path/to/GeoIP/database/'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 CSRF_TRUSTED_ORIGINS = [
-    'https://yotesafari.com',
+    'https://www.Kili2poriExpedition.com',
     'http://localhost:8000',
 ]
 
@@ -37,7 +37,7 @@ CSRF_TRUSTED_ORIGINS = [
 SECRET_KEY = 'aliwy-w)qwg1##ln(ig)j$s6oz#vp4zq4hm11ao$j9b!h6k*8x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 
@@ -97,8 +97,6 @@ WSGI_APPLICATION = 'telusko.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 
-
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -112,9 +110,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres', 
-        'USER': 'postgres.mnvgjvcnxnebtiqxozgg',  
-        'PASSWORD': 'NyumbaChap', 
-        'HOST': 'aws-1-eu-west-2.pooler.supabase.com',  
+        'USER': 'postgres.nnbjkucgsjrstooifido',  
+        'PASSWORD': 'NyumbaChap@123', 
+        'HOST': 'aws-1-eu-west-1.pooler.supabase.com',  
         'PORT': '5432',  
         'OPTIONS': {'connect_timeout': 10}
 
@@ -126,7 +124,6 @@ DATABASES = {
 # host=aws-1-eu-west-2.pooler.supabase.com
 # port=5432
 # dbname=postgres
-
 # NyumbaChap
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -198,13 +195,15 @@ MEDIA_URL = f"https://res.cloudinary.com/{os.getenv('CLOUDINARY_CLOUD_NAME')}/"
 
 
 
+#admin
+#kili2pori@123
 
 
 JAZZMIN_SETTINGS = {
-    "site_title": "Yote Safari Site Admin",
-    "site_header": "Yote Safari Dashboard",
-    "welcome_sign": "Karibu kwenye Dashboard  Yote Safari",
-    "copyright": "© 2025  YoteSafari Tanzania Advantures",
+    "site_title": "Kili2pori Expedition Site Admin",
+    "site_header": "Kili2pori Expedition Dashboard",
+    "welcome_sign": "Karibu kwenye Dashboard  Kili2pori Expedition",
+    "copyright": "© 2026  Kili2pori Expedition",
     "show_sidebar": True,
     "navigation_expanded": True,
     "user_avatar": None,
@@ -212,7 +211,7 @@ JAZZMIN_SETTINGS = {
     "topmenu_links": [
         {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
         {"model": "auth.User"},
-        {"app": " Yote Safari Tanzania Advantures"},
+        {"app": " Kili2pori Expedition"},
     ],
 }
 
