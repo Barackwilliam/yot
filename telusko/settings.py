@@ -119,13 +119,14 @@ DATABASES = {
     }
 }
 
-# user=postgres.mnvgjvcnxnebtiqxozgg 
+
+# NyumbaChap
+# user=postgres.kernujrtkwappagevvvh 
 # password=[YOUR-PASSWORD] 
-# host=aws-1-eu-west-2.pooler.supabase.com
+# host=aws-1-eu-north-1.pooler.supabase.com
 # port=5432
 # dbname=postgres
-# NyumbaChap
-# Password validation
+
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
