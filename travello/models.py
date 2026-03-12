@@ -336,7 +336,6 @@ class Tour_Itinerary(models.Model):
 
 
 
-
 class Trip_DB(models.Model):
     title = models.CharField(max_length=255)
     location = models.CharField(max_length=100)
