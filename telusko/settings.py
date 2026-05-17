@@ -110,7 +110,7 @@ WSGI_APPLICATION = 'telusko.wsgi.application'
 # }
 
 
-
+#hosted supabase using info@comebackafricansafaris.com
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
